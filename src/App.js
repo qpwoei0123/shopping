@@ -1,8 +1,8 @@
 import './App.css';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
-import productList from './pages/productList'
-import mainPage from './pages/mainPage'
-import bookMark from './pages/bookMark'
+import ProductList from './pages/ProductList'
+import MainPage from './pages/MainPage'
+import BookMark from './pages/BookMark'
 import Header from './components/Header'
 import Footer from './components/Footer';
 
@@ -14,9 +14,9 @@ function App() {
      <div className='App'>
         <Header />
         <Routes>
-          <Route path='/' element={<mainPage/>} />
-          <Route path='/productlist' element={<productList/>}/>
-          <Route path='/bookmark' element={<bookMark/>}/>
+          <Route path='/' element={<MainPage/>} />
+          <Route path='/productlist' element={<ProductList/>}/>
+          <Route path='/bookmark' element={<BookMark/>}/>
         </Routes>
         <Footer/>
       </div>
