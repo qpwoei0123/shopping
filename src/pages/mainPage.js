@@ -17,7 +17,22 @@ const ItemList = styled.div`
   display: flex;
   flex-direction: row;
 `
+const H2 = styled.h2`
+  margin-right: 80%;
 
+  font-family: 'Inter';
+  font-style: normal;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 29px;
+
+  color: #000000;
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+`
 
 export default function MainPage() {
   
@@ -33,18 +48,28 @@ export default function MainPage() {
       })
   }, []);
   
+  useEffect(() => {
+
+  },[items]);
     
     return (
       <Container className='mainContainer'>
-        <h2>상품 리스트</h2>
+        <H2>상품 리스트</H2>
         <ItemList className='ItemList'>
+        
           {items.map((item, index) => {
             return <Item key={index} item={item} items={items} setItems={setItems}/>
           })}
         </ItemList>
-        <h2>북마크 리스트</h2>
+        
+        <H2>북마크 리스트</H2>
         <ItemList className='BookMarkList'>
         
+          {items.map((item, index) => {
+            if(item.book_mark === true){
+              return <Item key={index} item={item} items={items} setItems={setItems}/>
+            }
+          })}
         </ItemList>
       </Container>
     )
