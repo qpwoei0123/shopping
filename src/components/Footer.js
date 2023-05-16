@@ -5,7 +5,6 @@ const FooterStyled =  styled.footer`
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
-	height: 100vh;
 `
 const FooterContents = styled.p`
   display: flex;
@@ -29,7 +28,6 @@ const FooterContents = styled.p`
 export default function Footer() {
     return(
     <FooterStyled>
-      <div></div>
       <FooterContents>개인정보 처리방침 | 이용 약관 <br/>All rights reserved @ Codestates</FooterContents>
     </FooterStyled>
     )
