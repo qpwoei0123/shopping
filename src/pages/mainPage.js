@@ -4,8 +4,6 @@ import axios from "axios";
 import styled from 'styled-components';
 
 const Container = styled.div`
-  /* Main Page */
-  /* Auto layout */
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -29,16 +27,37 @@ const H2 = styled.h2`
 `
 
 export default function MainPage() {
-
-  const [items, setItems] = useState([]);
+ 
+  
+  const [items, setItems] = useState(
+    localStorage.getItem('items')
+    ? JSON.parse(localStorage.getItem('items'))
+    : []
+  );
 
   useEffect(() => {
-    axios
-      .get("http://cozshopping.codestates-seb.link/api/v1/products?count=4", {
-        method: "GET",})
-      .then((res) => {
-        setItems(res.data);})
+    const fetchData = async () => {
+      if(localStorage.getItem('items')){
+        setItems(JSON.parse(localStorage.getItem('items')));
+      }
+      else{
+        try {
+          const response = await axios.get('http://cozshopping.codestates-seb.link/api/v1/products?count=4');
+          setItems(response.data);
+          localStorage.setItem('items', JSON.stringify(response.data));
+        } catch (error) {
+          console.error(error);
+        }
+      }
+    };
+    fetchData();
   }, []);
+
+  useEffect(() => {
+    if(localStorage.getItem('items')){
+    localStorage.setItem('items', JSON.stringify(items));
+    }
+  }, [items]);
     
     return (
       <Container className='mainContainer'>
