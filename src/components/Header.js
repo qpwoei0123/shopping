@@ -14,7 +14,7 @@ const HeaderStyled = styled.header`
     height: 80px;
     background: #FFFFFF;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
-    
+    z-index: 100;
 `;
 
 const CosLogoBox = styled.div`

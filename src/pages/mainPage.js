@@ -8,6 +8,7 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   background: #FFFFFF;
+  z-index: 1;
 `
 const ItemList = styled.div`
   display: flex;
@@ -29,15 +30,14 @@ const H2 = styled.h2`
 `
 
 export default function MainPage() {
- 
-  
+  //items상태 선언, 로컬에 있는지 유무
   const [items, setItems] = useState(
     localStorage.getItem('items')
     ? JSON.parse(localStorage.getItem('items'))
     : []
   );
 
-  //찻 렌더링시 로컬스토리지 Items가 있는지 유무
+  //첫 렌더링시 로컬스토리지 Items가 있는지 유무
   useEffect(() => {
     const fetchData = async () => {
       if(localStorage.getItem('items')){
@@ -61,13 +61,15 @@ export default function MainPage() {
     if(localStorage.getItem('items')){
     localStorage.setItem('items', JSON.stringify(items));
     }
+    
   }, [items]);
     
     return (
       <Container className='mainContainer'>
         <H2>상품 리스트</H2>
         <ItemList className='ItemList'>
-          {items.map((item, index) => {
+          {items.sort(()=> Math.random() - 0.5).slice(0,4) //랜덤 정렬 후 4개의 요소 뽑기.
+          .map((item, index) => {
             return <Item key={index} item={item} items={items} setItems={setItems}/>
           })}
         </ItemList>

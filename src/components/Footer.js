@@ -4,7 +4,7 @@ import styled from "styled-components";
 const FooterStyled =  styled.footer`
 	display: flex;
 	flex-direction: column;
-	justify-content: space-between;
+  border-top: 1px solid #dddddd;
 `
 const FooterContents = styled.p`
   display: flex;
@@ -28,7 +28,7 @@ const FooterContents = styled.p`
 export default function Footer() {
     return(
     <FooterStyled>
-      <FooterContents>개인정보 처리방침 | 이용 약관 <br/>All rights reserved @ Codestates</FooterContents>
+      <FooterContents>개인정보 처리방침 | 이용 약관 <br/><br/>All rights reserved @ Codestates</FooterContents>
     </FooterStyled>
     )
   }

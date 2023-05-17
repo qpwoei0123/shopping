@@ -6,8 +6,7 @@ import BookMark from './pages/BookMark'
 import Header from './components/Header'
 import Footer from './components/Footer';
 
-function App() {
-  const asd = 'asd'
+function App(){
   
   return (
     <BrowserRouter>

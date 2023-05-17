@@ -8,7 +8,8 @@ position: relative;
     width: 300px;
     height: 300px;
     padding: 10px;
-    overflow:hidden;
+    
+    clear: both;
 `
 
 const Img = styled.img`
@@ -16,6 +17,7 @@ const Img = styled.img`
     height:80%;
     object-fit:cover;
     border-radius: 5%;
+    
 `
 const StarContainer = styled.div`
     position: absolute;
@@ -38,7 +40,7 @@ const P = {
     bottom:  10%;
     right: 5%;
     font-weight: bold;
-    color: ${(props) => props.primary ? 'purple' : 'black'};
+    color: ${(props) => props.primary ? 'purple' : 'black'}; //스타일 컴포넌트 props전달법
     `,
     RB : styled.p`
     position: absolute;
@@ -117,9 +119,10 @@ export default function Item({item ,items, setItems}) {
                         ? <img src={starOn} />
                         : <img src={starOff} />}
                 </StarContainer>
-                </Container>
                 <P.LT>{item.title}</P.LT>
                 <P.LB>{item.sub_title}</P.LB>
+                </Container>
+                
             </div>
         )
     }
