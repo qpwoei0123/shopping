@@ -1,3 +1,11 @@
+import React, { useEffect, useState } from'react';
+import Category from '../components/Category';
+
 export default function Products() {
-    return <div className="flex">물건 목록입니다.</div>;
+    return (
+      <div>
+        <Category />
+        <h1>Products</h1>
+      </div>
+    )
   }

@@ -1,53 +1,9 @@
 import React from 'react'
-import styled  from 'styled-components'
 import starOff from '../images/starOff.png'
 import starOn from '../images/starOn.png'
+import { Container, Img, StarContainer, P } from './Item.Styles'
 
-const Container = styled.div`
-position: relative;
-    width: 300px;
-    height: 300px;
-    padding: 10px;
-    
-    clear: both;
-`
-
-const Img = styled.img`
-	width:100%;
-    height:80%;
-    object-fit:cover;
-    border-radius: 5%;
-    
-`
-const StarContainer = styled.div`
-    position: absolute;
-    top: 65%;
-    left: 85%;
-`
-
-const P = {
-    LT : styled.p`
-    position: absolute;
-    font-weight: bold;
-    bottom:  10%;
-    `,
-    LB : styled.p`
-    position: absolute;
-    bottom:  0%;
-    `,
-    RT : styled.p`
-    position: absolute;
-    bottom:  10%;
-    right: 5%;
-    font-weight: bold;
-    color: ${(props) => props.primary ? 'purple' : 'black'}; //스타일 컴포넌트 props전달법
-    `,
-    RB : styled.p`
-    position: absolute;
-    bottom:  0%; 
-    right: 5%;
-    `
-}
+//아이템 객체 1개를 주면 묻지도 따지지도 않고 알아서 만들어줍니다.
 export default function Item({item ,items, setItems}) {
 
     const handleClick = () => {
