@@ -12,6 +12,8 @@ const Container = styled.div`
 const ItemList = styled.div`
   display: flex;
   flex-direction: row;
+  width: 1280px;
+  overflow: hidden;
 `
 const H2 = styled.h2`
   margin-right: 80%;
@@ -35,6 +37,7 @@ export default function MainPage() {
     : []
   );
 
+  //찻 렌더링시 로컬스토리지 Items가 있는지 유무
   useEffect(() => {
     const fetchData = async () => {
       if(localStorage.getItem('items')){
@@ -42,7 +45,7 @@ export default function MainPage() {
       }
       else{
         try {
-          const response = await axios.get('http://cozshopping.codestates-seb.link/api/v1/products?count=4');
+          const response = await axios.get('http://cozshopping.codestates-seb.link/api/v1/products?count');
           setItems(response.data);
           localStorage.setItem('items', JSON.stringify(response.data));
         } catch (error) {
@@ -53,7 +56,8 @@ export default function MainPage() {
     fetchData();
   }, []);
 
-  useEffect(() => {
+  // 아이템이 바뀔 시 로컬스토리지 변경
+  useEffect(() => {  
     if(localStorage.getItem('items')){
     localStorage.setItem('items', JSON.stringify(items));
     }
