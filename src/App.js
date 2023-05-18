@@ -14,8 +14,8 @@ function App(){
         <Header />
         <Routes>
           <Route path='/' element={<MainPage/>} />
-          <Route path='/products' element={<Product/>}/>
-          <Route path='/bookmark' element={<BookMark/>}/>
+          <Route path='/products/*' element={<Product/>}/>
+          <Route path='/bookmark/*' element={<BookMark/>}/>
         </Routes>
         <Footer/>
       </div>

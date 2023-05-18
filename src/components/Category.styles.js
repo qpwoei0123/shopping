@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { Link } from'react-router-dom';
 
 export const S = {
     Container: styled.div`
@@ -18,6 +19,11 @@ export const S = {
         
     `,
     Name: styled.div`
-
+        text-decoration: none;
+    `,
+    StyledLink : styled(Link)`
+       text-decoration: none;
+       color: black;
     `
+    
 }

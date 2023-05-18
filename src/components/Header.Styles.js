@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
+
 
 export const HeaderStyled = styled.header`
     position: sticky;
@@ -8,6 +10,7 @@ export const HeaderStyled = styled.header`
     background: #FFFFFF;
     box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1);
     z-index: 100;
+    border-bottom: none;
 `;
 
 export const CosLogoBox = styled.div`
@@ -48,7 +51,6 @@ export const GnbButton = styled.button`
 position: absolute;
 right: 10%;
 top: 28px;
-
 background-color: white;
 border: none;
 `
@@ -74,4 +76,9 @@ font-size: 20px;
 display: flex;
 align-items: center;
 padding-left: 20px;
+`
+
+export const StyledLink = styled(Link)`
+text-decoration: none;
+color: black;
 `

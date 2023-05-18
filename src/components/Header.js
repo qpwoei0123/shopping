@@ -1,10 +1,11 @@
 import React, { useState } from 'react'
 import logo from '../images/logo.png'
-import { Link } from 'react-router-dom';
 import DensityMediumIcon from '@mui/icons-material/DensityMedium';
 import RedeemIcon from '@mui/icons-material/Redeem';
 import StarBorderIcon from '@mui/icons-material/StarBorder';
-import { Gnb, GnbButton ,HeaderName, CosLogo, DropDown, DropDownElements, HeaderStyled} from './Header.Styles'
+import { Gnb, GnbButton ,HeaderName, CosLogo, DropDown, DropDownElements, HeaderStyled, StyledLink} from './Header.Styles'
+
+
 
 export default function Header() {
     const [isOnDropDown, setIsOnDropDown] = useState(false)
@@ -14,9 +15,9 @@ export default function Header() {
 
     return(
         <HeaderStyled>
-            <Link to='/' >
+            <StyledLink to='/' >
                     <CosLogo src={logo}/>
-            </Link>
+            </StyledLink>
             <HeaderName>COZ shopping</HeaderName>
             <Gnb className='Gnb'>
                 <GnbButton>
@@ -27,16 +28,16 @@ export default function Header() {
                             <DropDownElements>
                                 ooo님, 안녕하세요!
                             </DropDownElements>
-                            <Link to='/products'>
+                            <StyledLink to='/products/all'>
                                 <DropDownElements>
-                                    <RedeemIcon/>상품리스트 페이지
+                                    <RedeemIcon/><p>상품리스트 페이지</p>
                                 </DropDownElements>
-                            </Link>
-                            <Link to='/bookmark'>
+                            </StyledLink>
+                            <StyledLink to='/bookmark/all'>
                                 <DropDownElements>
                                     <StarBorderIcon/>북마크 페이지
                                 </DropDownElements>
-                            </Link>
+                            </StyledLink>
                         </DropDown>
                     : null}
             </Gnb>
