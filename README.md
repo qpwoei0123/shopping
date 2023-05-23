@@ -10,7 +10,7 @@ Coz-Shopping
 
 프로젝트 소개
 -------------
-주어진 명세서의 요구사항에 따른 기능구현 프로젝트 입니다.
+주어진 명세서의 요구사항에 따른 기능구현  프론트엔드 프로젝트 입니다.
 
 <img width="500" alt="image" src="https://github.com/qpwoei0123/fe-sprint-coz-shopping/assets/85989215/9d4dd763-793b-4802-9141-9ba0f64e2afe">
 
@@ -19,11 +19,16 @@ Pigma: https://www.figma.com/file/TfWAvMXegGEJiS3etqOSfs/FE-S4-project?node-id=0
 
 시작 가이드
 ------
-#requirements
+# requirements
 
-+Node.js : 18.14.2
++ Node.js : 18.14.2
 
-+npm: 9.6.6
++ npm: 9.6.6
 
-
-git clone 
+# installation
+```
+$ git clone https://github.com/qpwoei0123/fe-sprint-coz-shopping.git
+$ cd fe-sprint-coz-shopping
+$ npm install
+$ npm run start
+```
