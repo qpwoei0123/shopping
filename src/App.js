@@ -1,20 +1,23 @@
 import './App.css';
 import { BrowserRouter , Routes, Route } from 'react-router-dom';
-import React, { useState } from 'react';
-import { useSelector, useDispatch } from 'react-redux';
-import productList from './pages/productList'
-import mainPage from './pages/mainPage'
-import bookMark from './pages/bookMark'
+import Product from './pages/Product'
+import MainPage from './pages/MainPage'
+import BookMark from './pages/BookMark'
+import Header from './components/Header'
+import Footer from './components/Footer';
 
-function App() {
+function App(){
+  
   return (
     <BrowserRouter>
-      <div className='main'>
+     <div className='App'>
+        <Header />
         <Routes>
-          <Route path='/' element={<mainPage/>} />
-          <Route path='/products' element={<productList/>}/>
-          <Route path='/bookmark' element={<bookMark/>}/>
+          <Route path='/' element={<MainPage/>} />
+          <Route path='/products/*' element={<Product/>}/>
+          <Route path='/bookmark/*' element={<BookMark/>}/>
         </Routes>
+        <Footer/>
       </div>
     </BrowserRouter>
   );
