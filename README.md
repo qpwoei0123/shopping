@@ -19,13 +19,13 @@ Coz-Shopping
 
 시작 가이드
 ------
-# requirements
+### requirements
 
 >+ Node.js : 18.14.2
 >
 >+ npm: 9.6.6
 
-# installation
+### installation
 ```
 $ git clone https://github.com/qpwoei0123/fe-sprint-coz-shopping.git
 $ cd fe-sprint-coz-shopping
