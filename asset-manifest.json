@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/shopping/static/css/main.8dd0c6e2.css",
+    "main.js": "/shopping/static/js/main.472ba7f2.js",
+    "static/media/기획전.png": "/shopping/static/media/기획전.543874d81c91d7cd4a1d.png",
+    "static/media/전체.png": "/shopping/static/media/전체.bb9921febb60d97d4be7.png",
+    "static/media/브랜드.png": "/shopping/static/media/브랜드.21230f0b7d7ae3fa1009.png",
+    "index.html": "/shopping/index.html",
+    "main.8dd0c6e2.css.map": "/shopping/static/css/main.8dd0c6e2.css.map",
+    "main.472ba7f2.js.map": "/shopping/static/js/main.472ba7f2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.8dd0c6e2.css",
+    "static/js/main.472ba7f2.js"
+  ]
+}
